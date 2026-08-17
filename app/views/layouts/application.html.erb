@@ -23,7 +23,10 @@
   </head>
 
   <body>
+    <%= render "shared/navbar" %>
     <%= render "shared/messages" %>
+    <main class="container bg-light">
     <%= yield %>
+    </main>
   </body>
 </html>
