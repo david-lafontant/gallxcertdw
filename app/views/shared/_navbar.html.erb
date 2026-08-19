@@ -1,7 +1,7 @@
 
-<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" data-controller="navigation aria-label="Main navigation">
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-gunmetal" data-controller="navigation aria-label="Main navigation">
   <div class="container-fluid">
-    <%= link_to"Tonnel", root_path,  class:"navbar-brand" %>
+    <%= link_to "Tonnel", root_path,  class:"navbar-brand" %>
     <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -18,7 +18,7 @@
           <%= link_to "Canbiz", items_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
+          <%= link_to "Contact", contact_path, class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Settings</a>

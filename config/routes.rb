@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :items
 
   get "/about", to: "pages#about", as: :about
+  get "/contact", to: "pages#contact", as: :contact
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
