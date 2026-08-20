@@ -1,4 +1,47 @@
 
 <% content_for :title, "Home" %>
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<main id="home">
+<div class="divider"></div>
+<div class="container my-5 parallax"
+style="background-image: url(<%= image_path "palais-sans-souci-02.png"%>);">
+  <div class="p-5 d-flex flex-column align-items-center justify- bg-body-transparent rounded-3">
+
+    <div class="d-inline-flex gap-2 mb-5">
+      <button class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 rounded-pill" type="button">
+        Buy me
+        <svg class="bi ms-2" width="24" height="24"><use xlink:href="#arrow-right-short"/></svg>
+      </button>
+      <button class="btn btn-outline-secondary btn-lg px-4 rounded-pill" type="button">
+        gallery
+      </button>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="divider"></div>
+
+<div class="my-5 bg-light">
+  <div class="p-5 text-center">
+    <div class="container py-5">
+      <h1 class="text-body-emphasis">Full-width jumbotron</h1>
+      <p class="col-lg-8 mx-auto lead">
+        This takes the basic jumbotron above and makes its background edge-to-edge with a <code>.container</code> inside to align content. Similar to above, it's been recreated with built-in grid and utility classes.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="container my-5">
+  <div class="p-5 text-center bg-body-tertiary rounded-3">
+    <h1 class="text-body-emphasis">Basic jumbotron</h1>
+    <p class="lead">
+      This is a simple Bootstrap jumbotron that sits within a <code>.container</code>, recreated with built-in utility classes.
+    </p>
+  </div>
+</div>
+<div class="divider"></div>
+</main>
