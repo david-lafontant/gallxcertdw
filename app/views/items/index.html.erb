@@ -2,39 +2,21 @@
 <%if notice.present?%>
 <p style="color: green"><%= notice %></p>
 <%end%>
-
-
 <% content_for :title, "Gallery" %>
- <div class="divider"></div>
-<%= link_to "Add new item", new_item_path , class: "btn btn-primary m-2" %>
- <div class="divider"></div>
-<div class="container px-4 py-5" id="items">
- <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
-  <% @items.each do |item| %>
-    <%= link_to item do %>
-     <div class="col">
-        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg fade-container glass-card" style="background-image: url('<%= rails_blob_url(item.picture)  %>'); background-repeat: no-repeat; background-position: center; background-size: cover;">
-          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 fade-text">
-            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Short title, long jacket</h3>
-            <ul class="d-flex list-unstyled mt-auto">
-              <li class="me-auto">
-                <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
-              </li>
-              <li class="d-flex align-items-center me-3">
-                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
-                <small>Earth</small>
-              </li>
-              <li class="d-flex align-items-center">
-                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg>
-                <small>3d</small>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    <% end %>
-  <% end %>
- </div>
+div class="container-fluid bg-pale-slate-2">
+  <%if current_user %>
+   <div class="divider"></div>
+   <%= link_to "Add new item", new_item_path , class: "btn btn-primary m-2" %>
+  <%end%>
+
+
+  <div class="container px-4 py-5" id="items">
+    <div class="grid" data-controller="masonry-gallery">
+      <% @items.each do |item| %>
+        <%= link_to item do %>
+          <%= image_tag item.picture , class: "item grid-item" %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 </div>
-
-
