@@ -9,8 +9,8 @@ class Ability
     elsif user.admin?
      can :manage, :all
     else
-      can [:read, :create], Item
-      can [:update, :destroy], Item, user: user
+      can [ :read, :create ], Item
+      can [ :update, :destroy ], Item, user: user
       can :manage, User, user: user
     end
     # See the wiki for details:
