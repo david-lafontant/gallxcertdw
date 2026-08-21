@@ -66,7 +66,7 @@ group :test do
   gem "selenium-webdriver"
 end
 
-gem "active_storage_validations", "~> 3.0", ">= 3.0.1"
+gem "active_storage_validations", "~> 4.0"
 gem "aws-sdk-s3", "~> 1.192", require: false
 gem "bootstrap_form", ">= 5.6.1"
 gem "cancancan", "~> 3.6", ">= 3.6.1"
