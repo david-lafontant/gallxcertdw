@@ -70,7 +70,7 @@ gem "active_storage_validations", "~> 3.0", ">= 3.0.1"
 gem "aws-sdk-s3", "~> 1.192", require: false
 gem "bootstrap_form", ">= 5.6.1"
 gem "cancancan", "~> 3.6", ">= 3.6.1"
-gem "devise", "~> 4.9", ">= 4.9.4"
+gem "devise", "~> 5.0"
 gem "devise-bootstrap-form", ">= 0.4.0"
 gem "devise_invitable", "~> 2.0", ">= 2.0.10"
 gem "ffi", "~> 1.17", ">= 1.17.2"
