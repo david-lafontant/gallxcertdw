@@ -4,9 +4,8 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   protect_from_forgery
 
-    #Redirects to login for secure resources
+    # Redirects to login for secure resources
     rescue_from CanCan::AccessDenied do |exception|
-
       if user_signed_in?
         flash[:error] = "Not authorized to view this page"
         session[:user_return_to] = nil
@@ -16,6 +15,5 @@ class ApplicationController < ActionController::Base
         session[:user_return_to] = request.url
         redirect_to "/users/sign_in"
       end
-
     end
 end
