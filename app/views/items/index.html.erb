@@ -2,11 +2,6 @@
 
 <% content_for :title, "Gallery" %>
    <div class="divider"></div>
-<%if notice.present?%>
-<p style="color: green"><%= notice %></p>
-<%end%>
-
-
 
 <div class="container-fluid bg-pale-slate-2">
   <%if current_user %>
@@ -19,9 +14,11 @@
     <div class="grid" data-controller="masonry-gallery">
     <% cache('item_list', expires_in: 30.minutes) do %>
       <% @items.each do |item| %>
+        <% cache item do %>
         <%= link_to item do %>
           <%= image_tag item.picture , class: "item grid-item" %>
         <% end %>
+        <%end%>
       <% end %>
       <%end%>
     </div>
