@@ -16,5 +16,4 @@ module ActiveSupport
       FileUtils.rm_rf(ActiveStorage::Blob.services.fetch(:test_fixtures).root)
     end
   end
-
 end

@@ -1,7 +1,6 @@
 require "test_helper"
 
 class ItemsControllerTest < ActionDispatch::IntegrationTest
-
   setup do
     user = users(:one)
     sign_in user
@@ -20,7 +19,7 @@ class ItemsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create item" do
     assert_difference("Item.count") do
-      post items_url, params: { item: { description: @item.description, name: @item.name, price: @item.price, user_id: @item.user_id} }
+      post items_url, params: { item: { description: @item.description, name: @item.name, price: @item.price, user_id: @item.user_id } }
     end
 
     assert_redirected_to item_url(Item.last)
