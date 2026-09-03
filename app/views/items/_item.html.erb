@@ -1,9 +1,11 @@
 <div id="<%= dom_id item %>">
   <div class="container col-xxl-8 px-4 py-5 bg-brigt-snow">
     <div class="row flex-lg-row-reverse align-items-center g-5 py-5 bg-platinum">
+    <% if item.picture.attached? %>
       <div class="col-10 col-sm-8 col-lg-6">
         <%= image_tag  item.picture , class: "d-block mx-lg-auto img-fluid", alt:  item.name , size: "700x500", loading: "lazy" %>
       </div>
+      <%end%>
       <div class="col-lg-6">
         <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">    <%= item.name %></h1>
         <p class="lead">
