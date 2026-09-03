@@ -1,0 +1,1 @@
+tableau_blob: <%= ActiveStorage::FixtureSet.blob filename: "tableau.png", service_name: "test_fixtures" %>
