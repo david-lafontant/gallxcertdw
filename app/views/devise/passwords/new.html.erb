@@ -1,13 +1,19 @@
-<h2 class="text-center">Forgot your password?</h2>
+<main class="app-form w-100 m-auto">
+  <h2 class="text-center">Forgot your password?</h2>
 
-<%= bootstrap_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-  <p class="text-left">Please enter your email address and we will send you a link to reset your password.</p>
-  <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  <%= f.form_group class: "d-grid" do %>
-    <%= f.submit "Send me reset password instructions", class: "btn btn-primary btn-lg" %>
-  <% end %>
-<% end %>
-<div class="text-center">
-  <%= render "devise/shared/links" %>
-</div>
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+    <%= render "devise/shared/error_messages" , resource: resource %>
+      <p>Please enter your email address and we will send you a link to reset your password.</p>
+      <div class="form-floating mb-3">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" , class: "form-control" %>
+          <%= f.label :email %>
+      </div>
+      <div class="mb-3">
+        <%= f.submit "Send me reset password instructions" , class: "btn btn-primary w-100" %>
+      </div>
+      <% end %>
+
+        <div class="text-center mb-3">
+          <%= render "devise/shared/links" %>
+        </div>
+</main>

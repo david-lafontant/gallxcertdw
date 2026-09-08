@@ -1,14 +1,19 @@
-<h2 class="text-center">Resend unlock instructions</h2>
+<main class="app-form w-100 m-auto">
 
-<%= bootstrap_form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+  <h2 class="text-center">Resend unlock instructions</h2>
 
-  <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  <%= f.form_group class: "d-grid" do %>
-    <%= f.submit "Resend unlock instructions", class: "btn btn-primary btn-lg" %>
+  <%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+    <div class="form-floating mb-3">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+      <%= f.label :email %>
+    </div>
+    <div class="mb-3 w-100">
+      <%= f.submit "Resend unlock instructions", class: "btn btn-primary w-100" %>
+    </div>
   <% end %>
-<% end %>
 
-<div class="text-center">
-  <%= render "devise/shared/links" %>
-</div>
+  <div class="text-center">
+    <%= render "devise/shared/links" %>
+  </div>
+</main>

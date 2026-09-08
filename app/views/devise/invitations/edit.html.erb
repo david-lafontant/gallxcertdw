@@ -1,5 +1,6 @@
 
 <% if current_user && current_user.admin? %>
+<main class="form-signin w-100 m-auto">
   <%= link_to t("devise.invitations.edit.back_to_admin"), admin_users_path, class: "btn btn-default" %>
 <h2><%= t "devise.invitations.edit.header" %></h2>
 
@@ -14,4 +15,5 @@
 
   <%= f.submit t("devise.invitations.edit.submit_button"), class: "btn btn-primary btn-lg btn-block" %>
 <% end %>
+</main>
 <%end%>
