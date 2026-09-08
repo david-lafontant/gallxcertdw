@@ -1,0 +1,21 @@
+
+.app-form {
+  max-width: 330px;
+  padding: 1rem;
+}
+
+.app-form .form-floating:focus-within {
+  z-index: 2;
+}
+
+.app-form input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.app-form input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
