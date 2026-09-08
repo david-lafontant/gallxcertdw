@@ -1,9 +1,11 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: %i[ show edit update destroy ]
+  before_action :set_item, only: %i[show edit update destroy ]
+  load_and_authorize_resource
 
   # GET /items or /items.json
   def index
-    @items = Item.all
+    @items = Item.with_attached_picture.all
+    fresh_when(etag: @items, last_modified: @items.maximum(:updated_at))
   end
 
   # GET /items/1 or /items/1.json

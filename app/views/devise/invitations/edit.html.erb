@@ -1,3 +1,6 @@
+
+<% if current_user && current_user.admin? %>
+  <%= link_to t("devise.invitations.edit.back_to_admin"), admin_users_path, class: "btn btn-default" %>
 <h2><%= t "devise.invitations.edit.header" %></h2>
 
 <%= bootstrap_form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => { :method => :put } do |f| %>
@@ -11,3 +14,4 @@
 
   <%= f.submit t("devise.invitations.edit.submit_button"), class: "btn btn-primary btn-lg btn-block" %>
 <% end %>
+<%end%>
