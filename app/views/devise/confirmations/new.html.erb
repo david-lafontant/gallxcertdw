@@ -1,17 +1,22 @@
-<h2 class="text-center">Resend confirmation instructions</h2>
+<main class="app-form w-100 m-auto">
 
-<%= bootstrap_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+  <h3 class="text-center">Resend confirmation instructions</h3>
 
-  <%= f.email_field :email,
-                    autofocus: true,
-                    autocomplete: "email",
-                    value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
-  <%= f.form_group class: "d-grid" do %>
-    <%= f.submit "Resend confirmation instructions", class: "btn btn-primary btn-lg btn-block" %>
-  <% end %>
-<% end %>
+  <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+    <%= render "devise/shared/error_messages" , resource: resource %>
+      <div class="form-floating mb-3">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" , value: (resource.pending_reconfirmation? ?
+          resource.unconfirmed_email : resource.email), class: "form-control" %>
+          <%= f.label :email %>
+      </div>
 
-<div class="text-center">
-  <%= render "devise/shared/links" %>
-</div>
+      <div class="mb-3">
+        <%= f.submit "Resend confirmation instructions" , class: "btn btn-primary w-100" %>
+      </div>
+
+      <% end %>
+
+        <div class="text-center">
+          <%= render "devise/shared/links" %>
+        </div>
+</main>

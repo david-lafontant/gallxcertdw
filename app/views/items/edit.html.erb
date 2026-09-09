@@ -1,12 +1,17 @@
 <% content_for :title, "Editing item" %>
+  <% if current_user && current_user.admin? %>
+    <div class="container-fluid  bg-iron-grey">
 
-<h1>Editing item</h1>
+      <h1>Editing item</h1>
 
-<%= render "form", item: @item %>
+      <%= render "form" , item: @item %>
 
-<br>
+        <br>
 
-<div>
-  <%= link_to "Show this item", @item %> |
-  <%= link_to "Back to items", items_path %>
-</div>
+        <div>
+          <%= link_to "Show this item" , @item %> |
+            <%= link_to "Back to items" , items_path %>
+        </div>
+    </div>
+
+    <%end%>
