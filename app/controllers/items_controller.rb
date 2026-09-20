@@ -52,6 +52,7 @@ class ItemsController < ApplicationController
 
   # DELETE /items/1 or /items/1.json
   def destroy
+    @item.picture.purge
     @item.destroy!
 
     respond_to do |format|
