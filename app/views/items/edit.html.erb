@@ -1,17 +1,28 @@
 <% content_for :title, "Editing item" %>
-  <% if current_user && current_user.admin? %>
-    <div class="container-fluid  bg-iron-grey">
-
-      <h1>Editing item</h1>
-
-      <%= render "form" , item: @item %>
-
-        <br>
-
-        <div>
-          <%= link_to "Show this item" , @item %> |
-            <%= link_to "Back to items" , items_path %>
+<% if current_user && current_user.admin? %>
+  <main class="p-3 p-md-4 p-xl-5 bg-iron-grey">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6 col-xxl-5">
+          <div class="card border-0 shadow-sm rounded-4">
+            <div class="card-body p-3 p-md-4 p-xl-5">
+              <div class="row">
+                <div class="col-12">
+                  <div class="mb-5">
+                    <h2 class="h3">Editing item</h2>
+                    <h3 class="fs-6 fw-normal text-secondary m-0">Enter new value to edit</h3>
+                  </div>
+                </div>
+              </div>
+              <%= render "form" , item: @item %>
+              <div>
+                <%= link_to "Show this item" , @item %> |
+                <%= link_to "Back to items" , items_path %>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-
-    <%end%>
+  </main>
+<%end%>

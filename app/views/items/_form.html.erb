@@ -1,4 +1,4 @@
-<main class="app-form w-100 m-auto glass-card">
+
 
 
   <%= form_with(model: item) do |form| %>
@@ -17,32 +17,44 @@
         </ul>
       </div>
       <% end %>
-
+<div class="row gy-3 overflow-hidden">
+                <div class="col-12">
         <div class="form-floating mb-3">
-          <%= form.label :name %>
             <%= form.text_field :name, class: "form-control" %>
+             <%= form.label :name, class: "form-label" %>
         </div>
 
         <div class="form-floating mb-3">
-          <%= form.label :description %>
             <%= form.textarea :description, class: "form-control" %>
+            <%= form.label :description, class: "form-label" %>
         </div>
 
         <div class="form-floating mb-3">
-          <%= form.label :price %>
+
             <%= form.text_field :price, class: "form-control" %>
+            <%= form.label :price, class: "form-label" %>
         </div>
-
         <div class="form-floating mb-3">
-          <!-- <%= form.label :picture %> -->
           <%= form.file_field :picture, class: "form-control" %>
         </div>
+    <div class="mb-3">
+        <p class="text-light">
+          Leave empty to keep the current picture.
+        </p>
+    </div>
 
-
+    <div class="mb-3">
+      <% if item.picture.attached? %>
+        <%= image_tag item.picture, width: 100 %>
+      <% end %>
+    </div>
 
         <div class="mb-3">
           <%= form.submit class:"btn btn-warning" %>
         </div>
+
+         </div>
+          </div>
         <% end %>
 
-</main>
+
