@@ -51,8 +51,10 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
-
-  gem "letter_opener", "~> 1.4", ">= 1.4.1"
+  gem 'database_cleaner', '>= 2.1'
+  gem 'rspec-rails', '>= 8.0.1'
+  gem 'factory_bot_rails', '>= 6.5.1'
+  gem 'shoulda-matchers', '>= 8.0.1'
 end
 
 group :development do

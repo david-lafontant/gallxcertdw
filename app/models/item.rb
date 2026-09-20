@@ -3,12 +3,18 @@ class Item < ApplicationRecord
   has_one_attached :picture
 
   validates :picture, presence: true, on: :create
-  validates :price,  presence: true, numericality: { greater_than_or_equal_to: 0.01 }
-  validates :name, presence: true, uniqueness: true, length: { in: 6..50 }
-  validates :description, presence: true, length: { in: 6..1000 }
+  validates :price,  presence: true, numericality: { greater_than: 0.05 }
+  validates :name, presence: true, uniqueness: true, length: { in: 3..50 }
+  validates :description, presence: true, length: { in: 3..1000 }
   validate :validate_picture
 
+  validate :picture_presence_on_create
+
   private
+
+  def picture_presence_on_create
+    errors.add(:picture, "must be attached") if new_record? && !picture.attached?
+  end
 
   def validate_picture
     return unless picture.attached?
